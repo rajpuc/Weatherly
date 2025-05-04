@@ -9,19 +9,12 @@ export const weatherApiSlice = createApi({
         `/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${
           import.meta.env.VITE_API_KEY
         }&units=metric`,
-      keepUnusedDataFor: 300,
     }),
     getLocationByLatLon: builder.query({
       query: ({ lat, lon }: { lat: number; lon: number }) =>
         `/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${
           import.meta.env.VITE_API_KEY
         }`,
-      keepUnusedDataFor: 300,
-    }),
-    getWeatherByLocation: builder.query({
-      query: (city: string) =>
-        `/data/2.5/weather?q=${city}&appid==${import.meta.env.VITE_API_KEY}`,
-      keepUnusedDataFor: 300,
     }),
     getCitySuggestions: builder.query({
       query: (city: string) =>
@@ -32,5 +25,5 @@ export const weatherApiSlice = createApi({
   }),
 });
 
-export const { useGetWeatherByLatLonQuery, useGetLocationByLatLonQuery, useGetWeatherByLocationQuery,useGetCitySuggestionsQuery } =
+export const { useGetWeatherByLatLonQuery, useGetLocationByLatLonQuery, useGetCitySuggestionsQuery } =
   weatherApiSlice;

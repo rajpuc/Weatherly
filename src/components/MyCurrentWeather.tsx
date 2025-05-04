@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
+import { ArrowDown, ArrowUp, Droplets, RefreshCcw, Wind } from "lucide-react";
 import React from "react";
 
 
@@ -28,9 +28,7 @@ const MyCurrentWeather: React.FC<MyCurrentWeatherProps> = ({
     wind: { speed },
   } = weatherData;
 
-  console.log(currentWeather);
-  console.log(temp, feels_like, temp_min, temp_max, humidity);
-  console.log(speed);
+
 
   if (isWeatherError) {
     return <div></div>;
@@ -44,8 +42,8 @@ const MyCurrentWeather: React.FC<MyCurrentWeatherProps> = ({
   const formatTemp = (temp: number) => `${Math.round(temp)}°`;
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <div className="grid gap-8 md:grid-cols-2">
+    <div className="container mx-auto px-6  py-6">
+      <div className="relative border p-3 rounded-lg grid gap-8 md:grid-cols-2">
         {/* Left Section - Weather Info */}
         <div className="space-y-6">
           {/* Location Info */}
@@ -60,7 +58,7 @@ const MyCurrentWeather: React.FC<MyCurrentWeatherProps> = ({
                 </span>
               )}
             </div>
-            <p className="text-4xl font-bold sm:text-xl text-gray-600 dark:text-gray-400">{locationData[0]?.country}</p>
+            <p className="text-4xl text-end sm:text-start font-bold sm:text-xl text-gray-600 dark:text-gray-400">{locationData[0]?.country}</p>
           </div>
 
           {/* Temperature Info */}

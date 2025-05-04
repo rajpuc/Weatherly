@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# 🌤️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive and fast Weather App built with modern web technologies, providing real-time weather information with enhanced user experience.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* 🔍 **City-based Search** — Search weather by city name with live suggestions.
+* 📜 **Search History** — Persists your last 5 searched cities using `localStorage`.
+* ⚡ **Real-Time API Integration** — Fetches live weather data using [OpenWeatherMap](https://openweathermap.org/).
+* 🌀 **Loading States** — Gracefully handles data fetching with custom loaders.
+* 🚫 **Error Handling** — Displays user-friendly error messages for data issues.
+* 🌘 **Dark Mode Support** — Seamless dark mode experience.
+* 🎨 **Visual Enhancements** — Utilizes icons and interactive UI components for better UX.
+* 🧠 **State Management** — Global state is managed using **Redux Toolkit**.
+* 📡 **Data Fetching** — Uses **RTK Query** for efficient, and cached data fetching.
+* 📱 **Responsive Design** — Fully responsive layout, optimized for mobile, tablet, and desktop.
+* 🌪️ **Fast UI with Tailwind CSS** — Styled using **Tailwind CSS** for utility-first, fast, and maintainable design.
+* 🧾 **Typed Codebase** — Built entirely with **TypeScript** for type safety and scalability.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **React** 
+* **Redux Toolkit + RTK Query**
+* **TypeScript**
+* **Tailwind CSS**
+* **OpenWeatherMap API**
+* **Lucide-react** 
+* **LocalStorage API**
+* **Framer motion**
+* **Vite** 
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📸 Preview
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+![Weather App Screenshot](./public/weatherly_dark.png)
+![Weather App Screenshot](./public/weatherly_light.png)
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```

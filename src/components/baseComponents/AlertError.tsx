@@ -5,6 +5,7 @@ interface LocationErrorProps {
   errorName: string;
   buttonIcon?: React.ElementType;
   error: string;
+  buttonText:string;
   cb: () => void;
 }
 
@@ -13,6 +14,7 @@ const AlertError: React.FC<LocationErrorProps> = ({
   errorName,
   buttonIcon: ButtonIcon,
   error,
+  buttonText,
   cb,
 }) => {
   return (
@@ -33,7 +35,7 @@ const AlertError: React.FC<LocationErrorProps> = ({
                      transition-colors duration-200 flex items-center py-1"
         >
           {ButtonIcon && <ButtonIcon size={20} />}
-          Enable Location
+          {buttonText}
         </button>
       </div>
     </div>
