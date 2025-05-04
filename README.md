@@ -2,6 +2,9 @@
 
 A fully responsive and fast Weather App built with modern web technologies, providing real-time weather information with enhanced user experience.
 
+**Live Site**: [https://weatherly-indol.vercel.app](https://weatherly-indol.vercel.app)  
+**GitHub Repository**: [https://github.com/rajpuc/Weatherly](https://github.com/rajpuc/Weatherly)
+
 ## 🚀 Features
 
 * 🔍 **City-based Search** — Search weather by city name with live suggestions.
