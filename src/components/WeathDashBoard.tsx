@@ -92,12 +92,7 @@ const WeatherDashBoard: React.FC<WeatherDashBoardProps> = ({ lat, lon }) => {
       {weatherData && locationData && (
         <MyCurrentWeather
           weatherData={weatherData}
-          isWeatherError={isWeatherError}
-          weatherError={weatherError}
-          weatherRefetch={weatherRefetch}
           locationData={locationData}
-          isLocationError={isLocationError}
-          locationError={locationError}
         />
       )}
     </>

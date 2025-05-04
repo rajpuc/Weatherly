@@ -100,7 +100,7 @@ const CitySearch: React.FC<CitySearchProps> = ({ onSelectCity }) => {
 
             {search.length > 1 && suggestions.length > 0 && (
               
-                suggestions.map((city, idx) => {
+                suggestions.map((city:CitySearchEntry, idx:number) => {
                   const cityEntry: CitySearchEntry = {
                     name: city.name,
                     country: city.country,
@@ -128,7 +128,7 @@ const CitySearch: React.FC<CitySearchProps> = ({ onSelectCity }) => {
           {history.length > 0 && (
             <div>
               <h4 className="px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-100">Recent Searches</h4>
-              {history.map((city, idx) => (
+              {history.map((city:CitySearchEntry, idx:number) => (
                 <div
                   key={`h-${idx}`}
                   className="px-4 py-2 cursor-pointer hover:bg-gray-50 text-blue-600"

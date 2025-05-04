@@ -11,7 +11,7 @@ import WeatherIconCarousel from "../components/baseComponents/WeatherIconCarouse
 import CitySearch from "../components/CitySearch";
 import WeatherDashBoard from "../components/WeathDashBoard";
 import AlertError from "../components/baseComponents/AlertError";
-import { CloudLightning, MapPin, MapPinOff, MapPinX, Rainbow, RefreshCcw } from "lucide-react";
+import { CloudLightning, MapPin, MapPinOff, MapPinX, RefreshCcw } from "lucide-react";
 
 const Home: React.FC = () => {
   const { coordinates, error, getLocation, isLoading } = useGeoLocation();
@@ -121,12 +121,7 @@ const Home: React.FC = () => {
       {weatherData && locationData && (
         <MyCurrentWeather
           weatherData={weatherData}
-          isWeatherError={isWeatherError}
-          weatherError={weatherError}
-          weatherRefetch={weatherRefetch}
           locationData={locationData}
-          isLocationError={isLocationError}
-          locationError={locationError}
         />
       )}
     </AppLayout>

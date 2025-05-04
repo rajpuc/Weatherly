@@ -1,43 +1,21 @@
-import { ArrowDown, ArrowUp, Droplets, RefreshCcw, Wind } from "lucide-react";
+import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
 import React from "react";
 
 
 interface MyCurrentWeatherProps {
   weatherData: any;
-  isWeatherError: boolean;
-  weatherError: any;
-  weatherRefetch: () => void;
   locationData: any;
-  isLocationError: boolean;
-  locationError: any;
 }
 
 const MyCurrentWeather: React.FC<MyCurrentWeatherProps> = ({
   weatherData,
-
-  isWeatherError,
-  weatherError,
-  weatherRefetch,
   locationData,
-  isLocationError,
-  locationError,
 }) => {
   const {
     weather: [currentWeather],
     main: { temp, feels_like, temp_min, temp_max, humidity },
     wind: { speed },
   } = weatherData;
-
-
-
-  if (isWeatherError) {
-    return <div></div>;
-  }
-
-  if (isLocationError) {
-    return <p className="text-red-500 text-center">{locationError?.message}</p>;
-  }
-
 
   const formatTemp = (temp: number) => `${Math.round(temp)}°`;
 
